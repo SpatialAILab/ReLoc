@@ -1,7 +1,7 @@
 # ReLoc
 
 ## ReLoc: Rethinking Scene Coordinate Regression Architecture for Robust Outdoor LiDAR Localization
-**Authors:** Heejoon Moon(https://phantom0122.github.io/), Yurim Cho, [Je Hyeong Hong](https://scholar.google.com/citations?user=7axCcBkAAAAJ&hl=en)
+**Authors:** [Heejoon Moon](https://phantom0122.github.io/), Yurim Cho, [Je Hyeong Hong](https://scholar.google.com/citations?user=7axCcBkAAAAJ&hl=en)
 
 <video src="imgs/ReLoc.mp4" controls>
 </video>
