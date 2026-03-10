@@ -1,11 +1,23 @@
 # ReLoc
 
 ## ReLoc: Rethinking Scene Coordinate Regression Architecture for Robust Outdoor LiDAR Localization
-**Authors:** Heejoon Moon, Yurim Cho, [Je Hyeong Hong](https://scholar.google.com/citations?user=7axCcBkAAAAJ&hl=en)
+**Authors:** Heejoon Moon(https://phantom0122.github.io/), Yurim Cho, [Je Hyeong Hong](https://scholar.google.com/citations?user=7axCcBkAAAAJ&hl=en)
 
+<video src="imgs/ReLoc.mp4" controls>
+</video>
 
+## Abstract
 Scene Coordinate Regression (SCR) has recently emerged as a promising approach for LiDAR-based localization, achieving accurate localization without requiring an explicit 3D map. Despite their effectiveness, existing SCR methods rely on scene classification-based global embedding that struggles to provide fine-grained discrimination among nearby locations. Moreover, their reliance on uniform sampling of local features during training assigns equal importance to all points, thereby inadvertently propagating features from dynamic objects or unstable regions and potentially degrading training stability. In this paper, we present ReLoc, a revamped SCR architecture that can effectively address these limitations. First, we redesign the global embedding module by combining learnable context tokens with a feature aggregator to capture richer and more discriminative scene context. Second, we introduce an attention-based local feature enhancement module to mitigate the impact of noisy local features while encouraging context-consistent structures, yielding more robust local feature representations. Experimental results on two large-scale outdoor datasets demonstrate that our approach achieves state-of-the-art accuracy over previous SCR-based methods while maintaining real-time inference performance.
 
+---
+## Environment
+
+### Requirements
+- python 3.10
+
+- pytorch 2.0.1
+
+- cuda 11.8
 
 ## Supported Datasets
 
@@ -86,6 +98,7 @@ python test.py --scene=/data/NCLT --classifier_path=pretrained/49_cls_NCLT.pth -
 
 ## Model Zoo
 Pretrained models (global embedding modulde, local feature enhancement module, and scene-specific regressor heads) are available for download [here](https://drive.google.com/drive/folders/1aumcbQkiX2matFzVUHKLoCJF-Svj7X56?usp=sharing).
+
 
 ## Citation
 
