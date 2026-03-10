@@ -74,7 +74,7 @@ python train.py --scene=/data/NCLT/ --classifier_path=log/49_cls_NCLT.pth --voxe
 ```
 
 ## Test
-####  (QE)Oxford
+#### QEOxford
 ```
 python test.py --scene=/data/Oxford --classifier_path=pretrained/49_cls_QEOxford.pth --regressor_path=pretrained/24_reg_QEOxford.pth --voxel_size=0.25
 ```
@@ -92,6 +92,7 @@ Pretrained models (backbone and scene-specific prediction heads) are available f
 ```
 This code builds on previous LiDAR localization pipelines, namely LightLoc, GTRLoc and FlashMix. Please consider citing:
 ```
+```
 @inproceedings{goswami2025flashmix,
   title={Flashmix: Fast map-free LiDAR localization via feature mixing and contrastive-constrained accelerated training},
   author={Goswami, Raktim Gautam and Patel, Naman and Krishnamurthy, Prashanth and Khorrami, Farshad},
@@ -100,10 +101,11 @@ This code builds on previous LiDAR localization pipelines, namely LightLoc, GTRL
   year={2025},
 }
 
-@inproceedings{yugtr,
-  title={GTR-Loc: Geospatial Text Regularization Assisted Outdoor LiDAR Localization},
-  author={Yu, Shangshu and Li, Wen and Sun, Xiaotian and Yuan, Zhimin and Wang, Xin and Wang, Sijie and She, Rui and Wang, Cheng},
-  booktitle={The Thirty-ninth Annual Conference on Neural Information Processing Systems}
+@inproceedings{yu2025gtrloc,
+  title={{GTR}-Loc: Geospatial Text Regularization Assisted Outdoor Li{DAR} Localization},
+  author={Shangshu Yu and Wen Li and Xiaotian Sun and Zhimin Yuan and Xin Wang and Sijie Wang and Rui She and Cheng Wang},
+  booktitle={The Thirty-ninth Annual Conference on Neural Information Processing Systems},
+  year={2025}
 }
 
 @inproceedings{li2025lightloc,

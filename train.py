@@ -168,25 +168,6 @@ class Trainer:
             group_size=(self.options.triplet_group_size if self.options.sample_cls else 1),
         )
 
-        # For Evaluation
-        self.testset = LiDARLocDataset(
-            root_dir=self.options.scene,
-            train=False,  # Test 모드
-            sample_cls=self.options.sample_cls,
-            voxel_size=self.options.voxel_size,
-            group_size=1,
-        )
-
-        # Validation dataset (used to monitor cls_run_epoch training performance).
-        # NOTE: relies on pose stats files created by the training dataset init above.
-        self.val_dataset = LiDARLocDataset(
-            root_dir=self.options.scene,
-            train=False,
-            sample_cls=self.options.sample_cls,
-            voxel_size=self.options.voxel_size,
-            group_size=1,
-        )
-
         # Create network using the state dict of the pretrained encoder.
         encoder_state_dict = torch.load(self.options.encoder_path, map_location="cpu")
         _logger.info(f"Loaded pretrained encoder from: {self.options.encoder_path}")
