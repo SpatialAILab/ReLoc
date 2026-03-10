@@ -19,6 +19,8 @@ Scene Coordinate Regression (SCR) has recently emerged as a promising approach f
 
 - cuda 11.8
 
+- MinkowskiEngine 0.5.4
+
 ## Supported Datasets
 
 LightLoc currently supports the following datasets:
