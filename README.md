@@ -85,7 +85,7 @@ python test.py --scene=/data/NCLT --classifier_path=pretrained/49_cls_NCLT.pth -
 **Note:** For results matching Table 3 in the paper, exclude lines 4300–4500 from the 2012-05-26 trajectory.
 
 ## Model Zoo
-Pretrained models (backbone and scene-specific prediction heads) are available for download [here](https://drive.google.com/drive/folders/1ZuEs7NbVGO8afqTZM0xCYJgeLtNzPbt0?usp=sharing).
+Pretrained models (global embedding modulde, local feature enhancement module, and scene-specific regressor heads) are available for download [here](https://drive.google.com/drive/folders/1aumcbQkiX2matFzVUHKLoCJF-Svj7X56?usp=sharing).
 
 ## Citation
 
