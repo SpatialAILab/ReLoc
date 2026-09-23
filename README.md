@@ -21,6 +21,46 @@ Scene Coordinate Regression (SCR) has recently emerged as a promising approach f
 
 - MinkowskiEngine 0.5.4
 
+## Installation
+```
+conda create -n reloc python=3.10 -y
+conda activate reloc
+
+# gcc g++ 9.3
+conda install gxx_linux-64=9.3.0
+export CC=$(which x86_64-conda-linux-gnu-gcc)
+export CXX=$(which x86_64-conda-linux-gnu-g++)
+
+# cuda 11.8
+conda install -c "nvidia/label/cuda-11.8.0" cuda-toolkit
+
+# Install PyTorch
+python -m pip install --no-user torch==2.0.1 torchvision==0.15.2 torchaudio==2.0.2 --index-url https://download.pytorch.org/whl/cu118
+conda install openblas-devel -c anaconda -y
+
+# Downgrade the version of setuptools
+pip uninstall setuptools -y
+python -m pip install --no-user setuptools==69.5.1
+python -m pip install --no-user pip==22.2.1
+# Set cuda PATH and install cuda toolkit
+export CUDA_HOME=$CONDA_PREFIX/
+
+# Install MinkowskiEngine
+pip install -U git+https://github.com/NVIDIA/MinkowskiEngine -v --no-deps --install-option="--blas_include_dirs=${CONDA_PREFIX}/include" --install-option="--blas=openblas"
+
+# Install pip packages
+python -m pip install --no-user matplotlib
+python -m pip install --no-user tqdm==4.67.1
+python -m pip install --no-user h5py
+python -m pip install --no-user pandas==2.3.3
+python -m pip install --no-user transforms3d==0.4.2
+python -m pip install --no-user open3d==0.19.0
+python -m pip install --no-user scikit-learn==1.2.2
+python -m pip install --no-user numpy==1.24
+python -m pip install --no-user einops==0.8.1
+conda install pyyaml
+```
+
 ## Supported Datasets
 
 LightLoc currently supports the following datasets:
@@ -104,9 +144,8 @@ Pretrained models (global embedding modulde, local feature enhancement module, a
 
 ## Citation
 
-```
 This code builds on previous LiDAR localization pipelines, namely LightLoc, GTRLoc and FlashMix. Please consider citing:
-```
+
 ```
 @inproceedings{goswami2025flashmix,
   title={Flashmix: Fast map-free LiDAR localization via feature mixing and contrastive-constrained accelerated training},
